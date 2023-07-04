@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "ebrahimhassan121/react-app"
+    dockerimagename = "ebrahimhassan121/react-app:v2"
     dockerImage = ""
   }
 
@@ -24,7 +24,7 @@ pipeline {
 --build-arg HTTPS_PROXY=${params.HTTPS_PROXY} \
 -f Dockerfile \
 ."""
-          dockerImage = docker.build("react-app")
+          dockerImage = docker.build dockerimagename
         }
       }
     }
